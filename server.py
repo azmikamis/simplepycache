@@ -62,7 +62,7 @@ class CacheHandler(BaseHTTPRequestHandler):
         print 'GET {}'.format(key)
         if key:
             if key in cache:
-                self.wfile.write(cache[key])
+                self.wfile.write(cache[key][0])
             else:
                 self.wfile.write('NULL')
         
