@@ -59,10 +59,12 @@ class CacheHandler(BaseHTTPRequestHandler):
         
     def do_GET(self):
         key = self.getKey(self.path)
-        print 'GET {}'.format(key)
+        print('GET {}'.format(key))
         if key:
             if key in cache:
-                self.wfile.write(cache[key][0])
+                value = cache[key][0]
+                print('value {}'.format()
+                self.wfile.write(value)
             else:
                 self.wfile.write('NULL')
         
