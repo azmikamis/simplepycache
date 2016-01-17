@@ -65,9 +65,12 @@ class CacheHandler(BaseHTTPRequestHandler):
                 value = cache[key][0]
                 print('value {}'.format(value))
                 self.wfile.write(value)
+                self.wfile.write("\n")
             else:
                 print('Invalid key')
                 self.wfile.write('NULL')
+                self.wfile.write("\n")
+        print
         
     def do_POST(self):
         rawdata = self.rfile.read(int(self.headers['Content-Length']))
