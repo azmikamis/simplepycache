@@ -63,9 +63,10 @@ class CacheHandler(BaseHTTPRequestHandler):
         if key:
             if key in cache:
                 value = cache[key][0]
-                print('value {}'.format()
+                print('value {}'.format(value))
                 self.wfile.write(value)
             else:
+                print('Invalid key')
                 self.wfile.write('NULL')
         
     def do_POST(self):
